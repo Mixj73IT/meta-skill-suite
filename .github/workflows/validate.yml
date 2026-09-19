@@ -1,0 +1,25 @@
+name: validate
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Install skills to the global location first: the validator's sync
+      # check expects ~/.agents/skills/ to match the project copies, and this
+      # mirrors exactly what a fresh machine does (README -> install).
+      - name: Install skills globally
+        run: |
+          mkdir -p ~/.agents/skills
+          cp -r .agents/skills/* ~/.agents/skills/
+
+      - name: Validate skill suite
+        run: python3 scripts/validate_skills.py
