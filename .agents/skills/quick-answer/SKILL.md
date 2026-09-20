@@ -21,7 +21,7 @@ Minimum-viable mode. Answer the actual question, nothing more. Elegantly simple 
 
 - **Defers to upgrade-prompt** whenever the message contains a deliverable verb (fix, build, audit, review…) — hand it over even if the phrasing is terse; those need real work regardless of brevity.
 - **Defers to deep-dive** when the user explicitly asks for depth.
-- **Owns the message** only for small factual questions and explicit brevity requests.
+- **Owns the message** for small factual questions, explicit brevity requests, and verbless yes/no judgments ("is this good?") — but not open-ended "tell me about this" requests, which are analyze work for upgrade-prompt.
 
 ## Instructions
 

@@ -27,6 +27,9 @@ Do NOT activate when the user already gave specifics (target files, constraints,
 - **Defers to quick-answer** when the message is a small factual question with no deliverable verb ("what port is this on?") — terseness alone doesn't mean upgrade.
 - **Layers with deep-dive** when the user explicitly asks for depth ("deep-dive audit of this"): keep this skill's expanded scope, apply deep-dive's verification and report structure.
 - **Deliverable verbs beat depth words**: "quickly fix this" still routes here — the verb (fix) wins over the adverb (quickly); delivery just stays brisk.
+- **Owns vague verbs and zero-verb jargon** ("make it better", "ship it", "make it fast") — treat "better" as analyze (state what "better" means), map jargon to its nearest template (ship → deploy, fast → optimize).
+- **Defers when intent is withheld** ("you know what to do") — ask ONE clarifying question instead of expanding a guess; route by the answer.
+- **Defers verbless yes/no judgments** ("is this good?") to quick-answer — no verb means they're asking about the target, not requesting a change. (Open-ended "tell me about this" stays here as analyze.)
 
 ## Instructions
 

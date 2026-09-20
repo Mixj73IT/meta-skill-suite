@@ -3,14 +3,22 @@
 ## Response-mode routing (the mode dial)
 
 Three skills form a dial for how much work one message should trigger. Route by the
-message's **deliverable verb first, then explicit depth words** — when two modes
-plausibly apply, the verb wins over the adverb.
+message's **deliverable verb first, then explicit depth words** — when two modes  plausibly apply, the verb wins over the adverb.
 
 | Mode | Skill | Owns the message when | Defers when |
 |------|-------|----------------------|-------------|
 | **Upgrade** | `/skill:upgrade-prompt` | Bare imperative or <~8-word shorthand with a deliverable verb (audit, fix, review, build, deploy…) | Message already has specifics (just work); small factual question |
 | **Deep** | `/skill:deep-dive` | Explicit depth ("deep dive", "go deep", "don't hold back") or high stakes (incident, security, architecture) | Small factual question; bare imperative without depth words |
-| **Quick** | `/skill:quick-answer` | Small factual question or explicit brevity ("TL;DR", "quickly", "just tell me") | Any deliverable verb present |
+| **Quick** | `/skill:quick-answer` | Small factual question or explicit brevity ("TL;DR", "quickly", "just tell me") | Any deliverable verb present; intent withheld ("you know what to do") |
+
+Learned rows (stress-test + corrections):
+
+| Learned trigger | Mode resolution |
+|---|---|
+| Vague verbs ("make it better", "improve this") | → **Upgrade**; expand via the "analyze" template stating what "better" means |
+| Zero-verb tasks and jargon ("ship it", "make it fast") | → **Upgrade**; map "ship" to deploy, "make it fast" to optimize |
+| Verbless judgments ("is this good?") | → **Quick**; open-ended "tell me about this" → **Upgrade** (analyze) |
+| Intent withheld ("you know what to do") | → no mode yet; ask ONE clarifying question, then route by the answer (verb → **Upgrade**, question → **Quick**) |
 
 How the modes combine:
 

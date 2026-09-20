@@ -17,6 +17,11 @@ from __future__ import annotations
 
 import re
 import sys
+
+# Windows consoles default to cp1252; learned rows may contain any Unicode.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 from pathlib import Path
 
 PROJECT_SKILLS = Path(".agents/skills")

@@ -21,7 +21,7 @@ Maximum-depth mode. Where default behavior balances speed and thoroughness, this
 
 - **Defers to quick-answer** when the question is small and factual — depth there is noise, not rigor.
 - **Defers scope to upgrade-prompt** when the message is a bare imperative without a depth request ("Audit this"): take that skill's expanded scope, run it at this skill's rigor.
-- **Owns the message** when the user explicitly asks for depth or the stakes demand it.
+- **Owns the message** when the user explicitly asks for depth, or when high stakes are being *investigated* ("our auth is compromised — find out how"). High-stakes *topics* raised as deliverables ("do a security check") defer scope to upgrade-prompt, run at this skill's rigor.
 
 ## Instructions
 
