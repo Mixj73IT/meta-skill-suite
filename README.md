@@ -1,5 +1,7 @@
 # meta-skill-suite
 
+[![Validate skill suite](https://github.com/Mixj73IT/meta-skill-suite/actions/workflows/validate.yml/badge.svg)](https://github.com/Mixj73IT/meta-skill-suite/actions/workflows/validate.yml)
+
 A **mode dial** for AI coding agents: three skills that scale what a single
 terse message triggers — plus a router that routes, a self-tuning rule that
 learns from your corrections, and a validator that keeps the whole thing
